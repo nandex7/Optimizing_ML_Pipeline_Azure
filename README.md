@@ -12,7 +12,7 @@ duration in seconds, campaigns, and other variables
 The best performance model was the algorithm Voting Ensemble found using AutoMl.The accuracy was of 0.9164 .
 
 
-![AutoML](images/autoML.png)
+![AutoML](images/AutoML.png)
 
 Regarding the method using python with Hyperdrive gives an accuracy of 0.9109
 ![hyperdrive](images/hyperdrive.png)
@@ -20,12 +20,16 @@ Regarding the method using python with Hyperdrive gives an accuracy of 0.9109
 ## Tools used.
 
 Visual Studio code.
- ![Index](images/Index.png)
+
+![Index](images/Index.png)
 
 Azure Visual Studio code Plugins
-  ![AzureMLplugin](images/AzureMLplugin.png)  
+
+![AzureMLplugin](images/AzureMLplugin.png)  
+
 Azure Visual Studio code - Jupyter and python.
- ![PluginsJupyter](images/PluginsJupyter.png)  
+
+![PluginsJupyter](images/PluginsJupyter.png)  
 
 
 ## Azure Libraries.
