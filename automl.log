@@ -227,3 +227,174 @@ Traceback:
 ExceptionTarget: Unspecified
 2020-12-30 14:23:29.527 - INFO - 4032 - azureml.automl.core.package_utilities._log_activity:92 - ActivityCompleted: Activity=PackagesCheck, HowEnded=Failure, Duration=6635.6[ms]
 2020-12-30 16:39:16.530 - INFO - 4032 - azureml.train.automl.automlconfig._start_execution:207 - Submitting remote.
+2020-12-30 17:43:46.571 - INFO - 4032 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2020-12-30 17:43:46.594 - INFO - 4032 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2020-12-30 17:43:46.599 - INFO - 4032 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetChildren
+2020-12-30 17:43:47.896 - CRITICAL - 4032 - azureml.train.automl.run.log_traceback:224 - Type: Unclassified
+Class: UserErrorException
+Message: UserErrorException:
+	Message: 
+Operation returned an invalid status code 'Forbidden'. The possible reason could be:
+1. You are not authorized to access this resource, or directory listing denied.
+2. you may not login your azure service, or use other subscription, you can check your
+default account by running azure cli commend:
+'az account list -o table'.
+3. You have multiple objects/login session opened, please close all session and try again.
+                
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "code": "UserError",
+        "message": "\nOperation returned an invalid status code 'Forbidden'. The possible reason could be:\n1. You are not authorized to access this resource, or directory listing denied.\n2. you may not login your azure service, or use other subscription, you can check your\ndefault account by running azure cli commend:\n'az account list -o table'.\n3. You have multiple objects/login session opened, please close all session and try again.\n                "
+    }
+}
+Traceback:
+  File "telemetry_activity_logger.py", line 57, in _log_activity
+    yield
+  File "run.py", line 762, in _get_run_internal
+    run_tags = self.get_tags()
+  File "run.py", line 1438, in get_tags
+    return self._client.get_tags()
+  File "run_history_facade.py", line 203, in get_tags
+    self.run_dto = self.run.get_run()
+  File "run_client.py", line 76, in get_run
+    return super(RunClient, self).get_run(self._run_id, **kwargs)
+  File "experiment_client.py", line 125, in get_run
+    **kwargs)
+  File "experiment_client.py", line 265, in _execute_with_experimentid_arguments
+    *args, **kwargs)
+  File "clientbase.py", line 581, in _execute_with_arguments
+    return self._call_api(func, *args_list, **kwargs)
+  File "clientbase.py", line 239, in _call_api
+    return self._execute_with_base_arguments(func, *args, **kwargs)
+  File "clientbase.py", line 328, in _execute_with_base_arguments
+    back_off, total_retry, self._logger, func, _noop_reset, *args, **kwargs)
+  File "clientbase.py", line 361, in _execute_func_internal
+    left_retry = cls._handle_retry(back_off, left_retry, total_retry, error, logger, func)
+  File "clientbase.py", line 406, in _handle_retry
+    raise_from(UserErrorException(error_msg), error)
+  File "<string>", line 3, in raise_from
+
+ExceptionTarget: None
+2020-12-30 17:43:47.896 - INFO - 4032 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetChildren, HowEnded=Failure, Duration=1296.69[ms]
+2020-12-30 17:43:47.898 - CRITICAL - 4032 - azureml.train.automl.run.log_traceback:224 - Type: Unclassified
+Class: UserErrorException
+Message: UserErrorException:
+	Message: 
+Operation returned an invalid status code 'Forbidden'. The possible reason could be:
+1. You are not authorized to access this resource, or directory listing denied.
+2. you may not login your azure service, or use other subscription, you can check your
+default account by running azure cli commend:
+'az account list -o table'.
+3. You have multiple objects/login session opened, please close all session and try again.
+                
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "code": "UserError",
+        "message": "\nOperation returned an invalid status code 'Forbidden'. The possible reason could be:\n1. You are not authorized to access this resource, or directory listing denied.\n2. you may not login your azure service, or use other subscription, you can check your\ndefault account by running azure cli commend:\n'az account list -o table'.\n3. You have multiple objects/login session opened, please close all session and try again.\n                "
+    }
+}
+Traceback:
+  File "telemetry_activity_logger.py", line 57, in _log_activity
+    yield
+  File "run.py", line 618, in _get_best_child_run
+    curr_run = self._get_run_internal(iteration, metric, "get_output")
+  File "run.py", line 762, in _get_run_internal
+    run_tags = self.get_tags()
+  File "run.py", line 1438, in get_tags
+    return self._client.get_tags()
+  File "run_history_facade.py", line 203, in get_tags
+    self.run_dto = self.run.get_run()
+  File "run_client.py", line 76, in get_run
+    return super(RunClient, self).get_run(self._run_id, **kwargs)
+  File "experiment_client.py", line 125, in get_run
+    **kwargs)
+  File "experiment_client.py", line 265, in _execute_with_experimentid_arguments
+    *args, **kwargs)
+  File "clientbase.py", line 581, in _execute_with_arguments
+    return self._call_api(func, *args_list, **kwargs)
+  File "clientbase.py", line 239, in _call_api
+    return self._execute_with_base_arguments(func, *args, **kwargs)
+  File "clientbase.py", line 328, in _execute_with_base_arguments
+    back_off, total_retry, self._logger, func, _noop_reset, *args, **kwargs)
+  File "clientbase.py", line 361, in _execute_func_internal
+    left_retry = cls._handle_retry(back_off, left_retry, total_retry, error, logger, func)
+  File "clientbase.py", line 406, in _handle_retry
+    raise_from(UserErrorException(error_msg), error)
+  File "<string>", line 3, in raise_from
+
+ExceptionTarget: None
+2020-12-30 17:43:47.898 - INFO - 4032 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Failure, Duration=1303.75[ms]
+2020-12-30 17:43:47.900 - CRITICAL - 4032 - azureml.train.automl.run.log_traceback:224 - Type: Unclassified
+Class: UserErrorException
+Message: UserErrorException:
+	Message: 
+Operation returned an invalid status code 'Forbidden'. The possible reason could be:
+1. You are not authorized to access this resource, or directory listing denied.
+2. you may not login your azure service, or use other subscription, you can check your
+default account by running azure cli commend:
+'az account list -o table'.
+3. You have multiple objects/login session opened, please close all session and try again.
+                
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "code": "UserError",
+        "message": "\nOperation returned an invalid status code 'Forbidden'. The possible reason could be:\n1. You are not authorized to access this resource, or directory listing denied.\n2. you may not login your azure service, or use other subscription, you can check your\ndefault account by running azure cli commend:\n'az account list -o table'.\n3. You have multiple objects/login session opened, please close all session and try again.\n                "
+    }
+}
+Traceback:
+  File "telemetry_activity_logger.py", line 57, in _log_activity
+    yield
+  File "run.py", line 688, in get_output
+    activity_name=automl_shared_constants.TelemetryConstants.GET_OUTPUT
+  File "run.py", line 618, in _get_best_child_run
+    curr_run = self._get_run_internal(iteration, metric, "get_output")
+  File "run.py", line 762, in _get_run_internal
+    run_tags = self.get_tags()
+  File "run.py", line 1438, in get_tags
+    return self._client.get_tags()
+  File "run_history_facade.py", line 203, in get_tags
+    self.run_dto = self.run.get_run()
+  File "run_client.py", line 76, in get_run
+    return super(RunClient, self).get_run(self._run_id, **kwargs)
+  File "experiment_client.py", line 125, in get_run
+    **kwargs)
+  File "experiment_client.py", line 265, in _execute_with_experimentid_arguments
+    *args, **kwargs)
+  File "clientbase.py", line 581, in _execute_with_arguments
+    return self._call_api(func, *args_list, **kwargs)
+  File "clientbase.py", line 239, in _call_api
+    return self._execute_with_base_arguments(func, *args, **kwargs)
+  File "clientbase.py", line 328, in _execute_with_base_arguments
+    back_off, total_retry, self._logger, func, _noop_reset, *args, **kwargs)
+  File "clientbase.py", line 361, in _execute_func_internal
+    left_retry = cls._handle_retry(back_off, left_retry, total_retry, error, logger, func)
+  File "clientbase.py", line 406, in _handle_retry
+    raise_from(UserErrorException(error_msg), error)
+  File "<string>", line 3, in raise_from
+
+ExceptionTarget: None
+2020-12-30 17:43:47.900 - INFO - 4032 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Failure, Duration=1329.59[ms]
+2020-12-30 18:29:27.385 - INFO - 25020 - azureml.train.automl.automlconfig._start_execution:207 - Submitting remote.
+2020-12-30 20:06:44.955 - INFO - 25020 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2020-12-30 20:06:44.973 - INFO - 25020 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2020-12-30 20:06:44.988 - INFO - 25020 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetChildren
+2020-12-30 20:06:47.454 - INFO - 25020 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=2466.18[ms]
+2020-12-30 20:06:47.454 - INFO - 25020 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=2481.18[ms]
+2020-12-30 20:06:47.454 - INFO - 25020 - azureml.train.automl._model_download_utilities._log_activity:54 - ActivityStarted: DownloadModel
+2020-12-30 20:07:02.521 - CRITICAL - 25020 - azureml.train.automl._model_download_utilities.log_traceback:224 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.train.automl.runtime'
+Traceback:
+  File "_model_download_utilities.py", line 151, in _load_automl_model
+    import azureml.train.automl.runtime
+
+ExceptionTarget: Unspecified
+2020-12-30 20:07:02.534 - WARNING - 25020 - azureml.train.automl._model_download_utilities._download_automl_model:97 - The model you attempted to retrieve requires 'azureml-train-automl-runtime' to be installed at '==1.19.0'. Please install 'azureml-train-automl-runtime==1.19.0' (e.g. `pip install azureml-train-automl-runtime==1.19.0`) and then rerun the previous command.
+2020-12-30 20:07:02.538 - INFO - 25020 - azureml.train.automl._model_download_utilities._log_activity:92 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=15084.43[ms]
+2020-12-30 20:07:02.539 - INFO - 25020 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=17584.57[ms]
