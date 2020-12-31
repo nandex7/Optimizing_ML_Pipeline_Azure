@@ -10,8 +10,12 @@ Data set used for this project https://archive.ics.uci.edu/ml/datasets/Bank+Mark
 duration in seconds, campaigns, and other variables  
 
 The best performance model was the algorithm Voting Ensemble found using AutoMl.The accuracy was of 0.9164 .
-Regarding the method using python with Hyperdrive gives an accuracy of 0.9109
 
+
+![AutoML](images/autoML.png)
+
+Regarding the method using python with Hyperdrive gives an accuracy of 0.9109
+![hyperdrive](images/hyperdrive.png)
 
 ## Scikit-learn Pipeline
 
@@ -53,4 +57,4 @@ We can improve the accuracy by trying different parameters in the hyperdrive con
 
 Also using the option to run Deeplearning in AutoML configuration could improve the accuracy of the model and GPU option trying other compute target.
 ## Proof of cluster clean up
-![Cleanup](imgs/Clustercleanup.png)
+![Cleanup](images/cleanup.png)
