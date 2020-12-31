@@ -17,6 +17,21 @@ The best performance model was the algorithm Voting Ensemble found using AutoMl.
 Regarding the method using python with Hyperdrive gives an accuracy of 0.9109
 ![hyperdrive](images/hyperdrive.png)
 
+## Tools used.
+
+Visual Studio code.
+ ![Index](images/Index.png)
+
+Azure Visual Studio code Plugins
+  ![AzureMLplugin](images/AzureMLplugin.png)  
+Azure Visual Studio code - Jupyter and python.
+ ![PluginsJupyter](images/PluginsJupyter.png)  
+
+
+## Azure Libraries.
+pip install azureml-sdk
+pip install azureml-core
+
 ## Scikit-learn Pipeline
 
 **Explain the pipeline architecture, including data, hyperparameter tuning, and classification algorithm.**
